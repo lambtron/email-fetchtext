@@ -34,11 +34,15 @@
             title: '',
             text: ''
           };
-          if (body)
+          var text = '';
+
+          if (body && typeof body == "string")
             data = extractor(body);
-          var text = data.title + '\n\n' + data.text;
+          text = data.title + '\n\n' + data.text;
+
           if (data.canonicalLink)
             text += '\n\nLink: ' + data.canonicalLink;
+
           if (data.text.length == 0) {
             text = 'Apologies, error parsing the link. Direct all hate tweets'
               + 'to @andyjiang.';
