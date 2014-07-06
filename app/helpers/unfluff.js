@@ -34,7 +34,7 @@
             title: '',
             text: ''
           };
-          if (body) {
+          if (body)
             data = extractor(body);
           var text = data.title + '\n\n' + data.text;
           if (data.canonicalLink)
