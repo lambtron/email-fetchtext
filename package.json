@@ -1,0 +1,25 @@
+{
+  "name": "emailfetchtext",
+  "description": "Send to this email address an email with a URL and you will receive an email with just the content parsed from said URL.",
+  "version": "0.0.1",
+  "author": "Andy Jiang",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lambtron/email-fetchtext"
+  },
+  "engines": {
+    "node": "0.10.22",
+    "npm": "1.1.x"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "underscore": "latest",
+    "request": "latest",
+    "mongoose": "latest",
+    "unfluff": "0.0.2",
+    "mandrill-api": "~1.0.40",
+    "async": "~0.9.0"
+  }
+}
