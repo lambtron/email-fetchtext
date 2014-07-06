@@ -1,6 +1,6 @@
 {
   "name": "emailfetchtext",
-  "description": "Send to this email address an email with a URL and you will receive an email with just the content parsed from said URL.",
+  "description": "Send or cc an email with a URL and you will receive an email with just the main text parsed from the URL.",
   "version": "0.0.1",
   "author": "Andy Jiang",
   "main": "server.js",
