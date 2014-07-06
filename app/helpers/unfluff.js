@@ -30,7 +30,12 @@
 
       var getText = function getText (url, cb) {
         request.get(url, function (err, res, body) {
-          var data = extractor(body);
+          var data = {
+            title: '',
+            text: ''
+          };
+          if (body) {
+            data = extractor(body);
           var text = data.title + '\n\n' + data.text;
           if (data.canonicalLink)
             text += '\n\nLink: ' + data.canonicalLink;
