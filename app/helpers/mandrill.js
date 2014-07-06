@@ -5,9 +5,14 @@
   var mandrill_client = new mandrill.Mandrill(process.env.MANDRILL_API_KEY);
   var _ = require('underscore');
   var EMAIL_ADDRESS = process.env.MANDRILL_EMAIL_ADDRESS;
+  var DOMAIN = process.env.DOMAIN;
 
   module.exports = {
     send: function send (emails, subject, body, cb) {
+      body += '\n\n\n\nForward or cc any link-containing emails to '
+        + EMAIL_ADDRESS
+        + ' and receive an email with the main text extracted. Learn more at '
+        + DOMAIN;
       var message = {
         text: body,
         to: emails, // [{ 'email': 'andyjiang@gmail.com' }, { ... }]

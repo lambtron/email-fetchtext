@@ -5,6 +5,7 @@
   var request = require('request');
   var async = require('async');
   var _ = require('underscore');
+  var DOMAIN = process.env.DOMAIN;
 
   function findUrls (text) {
     var source = (text || '').toString();
@@ -16,7 +17,8 @@
     // Iterate through any URLs in the text.
     while ((matchArray = regexToken.exec(source)) !== null) {
       var token = matchArray[0];
-      urlArray.push( token );
+      if (token.indexOf(DOMAIN) < 0)
+        urlArray.push( token );
     }
 
     return urlArray;
