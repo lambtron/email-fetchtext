@@ -17,7 +17,6 @@
     "express": "3.x",
     "underscore": "latest",
     "request": "latest",
-    "mongoose": "latest",
     "unfluff": "0.0.2",
     "mandrill-api": "~1.0.40",
     "async": "~0.9.0"

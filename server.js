@@ -20,7 +20,7 @@ app.use(express.bodyParser());
 require('./config/routes.js')(app);
 
 // Database.
-require('./app/lib/db_connect');
+// require('./app/lib/db_connect');
 
 // New relic.
 // require('newrelic');
