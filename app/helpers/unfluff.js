@@ -31,11 +31,14 @@
       var getText = function getText (url, cb) {
         request.get(url, function (err, res, body) {
           var data = extractor(body);
-          // Add data.title somewhere.
           var text = data.title + '\n\n' + data.text;
           if (data.canonicalLink)
             text += '\n\nLink: ' + data.canonicalLink;
-          return cb(null, data.title + '\n\n' + data.text);
+          if (data.text.length == 0) {
+            text = 'Apologies, error parsing the link. Direct all hate tweets'
+              + 'to @andyjiang.';
+          }
+          return cb(null, text);
         });
       };
 
