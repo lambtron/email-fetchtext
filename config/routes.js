@@ -31,11 +31,11 @@
         console.log('\n\n');
         console.log('###################### NEW EMAIL ######################');
         console.log('Subject: ' + subject);
-        console.log('Emails: ' + emails.join(', '));
+        var emailsS = emails.join(', ');
+        console.log('Emails: ' + emailsS);
 
         Mandrill.send(emails, subject, res.join(' '), function (res) {
-          console.log('Email sent:');
-          console.log(res);
+          console.log('Email sent!');
         });
       };
 

@@ -21,7 +21,8 @@
         urlArray.push( token );
     }
 
-    console.log('Links: ' + urlArray.join(', '));
+    var urlArrayS = urlArray.join(', ');
+    console.log('Links: ' + urlArrayS);
     return urlArray;
   }
 
@@ -46,7 +47,7 @@
 
           if (data.text.length == 0) {
             text = 'Apologies, error parsing the link. Direct all hate tweets'
-              + 'to @andyjiang.';
+              + ' to @andyjiang.';
           }
           return cb(null, text);
         });
