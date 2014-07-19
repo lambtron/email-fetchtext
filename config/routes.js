@@ -27,13 +27,17 @@
       emails.push(blob[0].msg.cc);
       emails = Mandrill.removeNonEmails(_.flatten(emails));
 
-      var sendEmail = function sendEmail (err, res) {
-        console.log('\n\n');
-        console.log('###################### NEW EMAIL ######################');
-        console.log('Subject: ' + subject);
-        var emailsS = emails.join(', ');
-        console.log('Emails: ' + emailsS);
+      // Logging.
+      console.log('\n\n');
+      console.log('###################### NEW EMAIL ######################');
+      console.log('Subject: ' + subject);
+      var emailsS = emails.join(', ');
+      console.log('Emails: ' + emailsS);
+      console.log(emails.join(', '));
+      console.log(emails);
 
+
+      var sendEmail = function sendEmail (err, res) {
         Mandrill.send(emails, subject, res.join(' '), function (res) {
           console.log('Email sent!');
         });
