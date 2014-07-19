@@ -7,29 +7,8 @@
   var _ = require('underscore');
   var DOMAIN = process.env.DOMAIN;
 
-  function findUrls (text) {
-    var source = (text || '').toString();
-    var urlArray = [];
-    var url;
-    var matchArray;
-    var regexToken = /(([a-z]+:\/\/)?(([a-z0-9\-]+\.)+([a-z]{2}|aero|arpa|biz|com|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|pro|travel|local|internal))(:[0-9]{1,5})?(\/[a-z0-9_\-\.~]+)*(\/([a-z0-9_\-\.]*)(\?[a-z0-9+_\-\.%=&amp;]*)?)?(#[a-zA-Z0-9!$&'()*+.=-_~:@/?]*)?)(\s+|$)/gi;
-
-    // Iterate through any URLs in the text.
-    while ((matchArray = regexToken.exec(source)) !== null) {
-      var token = matchArray[0];
-      if (token.indexOf(DOMAIN) < 0)
-        urlArray.push( token );
-    }
-
-    var urlArrayS = urlArray.join(', ');
-    console.log('Links: ' + urlArrayS);
-    return urlArray;
-  }
-
   module.exports = {
-    emailToText: function emailToText (body, cb) {
-      var URLs = findUrls(body);
-
+    emailToText: function emailToText (URLs, cb) {
       var getText = function getText (url, cb) {
         request.get(url, function (err, res, body) {
           var data = {
