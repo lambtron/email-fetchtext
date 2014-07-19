@@ -55,7 +55,7 @@
       console.log('Subject: ' + subject);
       console.log('Emails:');
       console.log(emails);
-      console.log(URLs.join(', '));
+      console.log('Links: ' + URLs.join(', '));
 
       var sendEmail = function sendEmail (err, res) {
         var body = res.join(' ');
