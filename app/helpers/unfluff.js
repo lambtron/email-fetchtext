@@ -21,6 +21,7 @@
         urlArray.push( token );
     }
 
+    console.log('Links: ' + urlArray.join(', '));
     return urlArray;
   }
 
