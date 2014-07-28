@@ -8,8 +8,8 @@ var express = require('express')
   , port = process.env.PORT || 3000;
 
 // Set environmental variables. ================================================
-// if (!process.env.MANDRILL_API_KEY)
-//   require('./config/config');
+if (!process.env.MANDRILL_API_KEY)
+  require('./config/config');
 
 // Configuration ===============================================================
 app.set('views', __dirname + 'public/views');
