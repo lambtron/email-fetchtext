@@ -5,7 +5,6 @@
   var request = require('request');
   var async = require('async');
   var _ = require('underscore');
-  var DOMAIN = process.env.DOMAIN;
 
   module.exports = {
     emailToText: function emailToText (URLs, cb) {

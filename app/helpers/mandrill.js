@@ -30,11 +30,12 @@
     removeNonEmails: function removeNonEmails (emailArray) {
       emailArray = _.compact(_.uniq(emailArray));
       for (var i = 0; i < emailArray.length; i++) {
-        if (emailArray[i].indexOf('@') < 0 || emailArray[i] == EMAIL_ADDRESS) {
+        var emailAddress = emailArray[i].toLowerCase();
+        if (emailAddress.indexOf('@') < 0 || emailAddress == EMAIL_ADDRESS) {
           emailArray[i] = '';
         } else {
           emailArray[i] = {
-            email: emailArray[i]
+            email: emailAddress
           };
         }
       }
